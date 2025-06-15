@@ -54,9 +54,7 @@ A marca apresenta um estilo **moderno, vibrante e jovial**, com as seguintes car
 
 ## 🚀 Acesse o site
 
-🔗 [Clique aqui para acessar o site publicado](https://<seu-usuario>.github.io/<nome-do-repo>/)
-
-> *(Substitua o link acima pelo seu link real do GitHub Pages)*
+🔗 [Clique aqui para acessar o site publicado](https://mariavitorialopes.github.io/SmileOne/)
 
 ---
 
