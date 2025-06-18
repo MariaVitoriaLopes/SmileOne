@@ -1,12 +1,18 @@
+@font-face {
+    font-family: 'Agrandir';
+    src: url("fonts/Agrandir/Agrandir-Regular.otf");
+}
+
 :root {
     --cinza-escuro: #101B28;
-    --cinza-claro: #252E3A;
+    --cinza-claro: #293540;
     --verde-neon: #05F29B;
+    --verde-escuro: #04BF7B;
     --laranja-neon: #FF6D04;
-    --laranja-claro: #E68A47D9;
+    --laranja-claro: #FCA346;
     --cinza-clarinho: #868484;
     --footer: #373737;
-    --agrandir: "asset/fonts/Agrandir-Regular.ttf";
+    --agrandir: "Agrandir", sans-serif;
 }
 
 * {
@@ -15,9 +21,10 @@
     padding: 0;
 }
 
+
 body {
-    font-family: 'Agrandir', sans-serif;
-    background-color: var(--cinza-claro);
+    font-family: var(--agrandir);
+    background-color: var(--cinza-escuro);
 }
 
 header {
@@ -25,8 +32,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--verde-neon);
-    padding: 1vw 2vw;
+    background-color: var(--cinza-claro);
+    padding: 1.5vw 3vw;
     font-size: 1vw;
     position: sticky;
     top: 0;
@@ -44,9 +51,15 @@ nav {
 }
 
 nav>a {
-    color: #000;
+    color: var(--verde-escuro);
     text-decoration: none;
     font-weight: bold;
+}
+
+nav > a:hover {
+    color: var(--verde-neon);
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
 .banner {
@@ -54,7 +67,7 @@ nav>a {
     align-items: center;
     justify-content: flex-end;
     background-image: url(/assets/img/banner.png);
-    height: 23rem;
+    height: 50vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -63,10 +76,14 @@ nav>a {
 }
 
 .banner>h2 {
-    width: 30vw;
-    text-align: justify;
-    font-size: 3vw;
+    width: 35vw;
+    /* text-align: justify; */
     cursor: default;
+    font-size: 3rem;
+}
+
+.destaque {
+    color: var(--verde-neon);
 }
 
 section {
@@ -82,17 +99,23 @@ section {
     cursor: default;
 }
 
+.h2:hover {
+    color: var(--laranja-neon);
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
 #quemSomos>p {
     width: 50%;
     margin: auto;
-    font-size: 2vw;
-    line-height: 3vw;
-    background-color: var(--cinza-escuro);
+    font-size: larger;
+    line-height: 2;
+    background-color: var(--cinza-claro);
     padding: 1vw 2vw;
     border-radius: 1vw;
     text-align: justify;
     color: #fff;
-    box-shadow: 0 0 10px 0 rgba(255, 255, 255, .25);
+    box-shadow: 0 2 8px 0 black;
     cursor: default;
 }
 
@@ -105,21 +128,26 @@ section {
 }
 
 #quemSomos>div>button {
-    background-color: var(--laranja-neon);
+    background-color: var(--laranja-claro);
     color: #fff;
     font-weight: 700;
-    padding: .5vw 1vw;
-    font-size: 1.3vw;
+    padding: 1vw 2vw;
+    font-size: 1rem;
     border-radius: 2vw;
     border: none;
+    box-shadow: 0 2px 8px 0 black;
+}
+
+#quemSomos div button:hover {
+    background-color: var(--laranja-neon);
 }
 
 #giftCards>div {
     display: grid;
     grid-template-columns: repeat(3, 25%);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 5vw;
-    grid-row-gap: 10vw;
+    grid-column-gap: 2vw;
+    grid-row-gap: 3vw;
     justify-content: center;
     align-items: center;
 }
@@ -128,11 +156,20 @@ section {
     width: 100%;
     height: 19vw;
     display: flex;
-    background-color: var(--cinza-escuro);
+    background-color: var(--cinza-claro);
     flex-direction: column;
     justify-content: space-between;
     border-radius: 1vw;
-    box-shadow: 0 0 10px 0 rgba(255, 255, 255, .25);
+    box-shadow: 0 2px 10px 0 black;
+    transition: 200ms ease;
+}
+
+.cards:hover {
+    transform: scale(1.1);
+
+    p {
+        color: var(--verde-neon);
+    }
 }
 
 .cards>p {
@@ -159,7 +196,7 @@ section {
     width: 100%;
     border-radius: 1vw;
 }
-
+/*
 #duvidas>div {
     width: 90%;
     margin: auto;
@@ -169,10 +206,10 @@ section {
     border-radius: 1vw;
     text-align: justify;
     color: #fff;
-    box-shadow: 0 0 10px 0 rgba(255, 255, 255, .25);
+    /* box-shadow: 0 0 10px 0 rgba(255, 255, 255, .25); 
 }
 
-#duvidas>div>div {
+ #duvidas>div>div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,19 +231,57 @@ section {
     height: 3vw;
     overflow: hidden;
     cursor: default;
+} */
+#duvidas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+}
+
+.duvida {
+    width: 50vw;
+    padding: 2vw;
+    color: white;
+    background-color: var(--cinza-claro);
+    border-radius: 8px;
+}
+
+.duvida_fechada {
+    display: flex;
+    justify-content: space-between;
+}
+
+.texto_duvida_aberta {
+    display: none;
+    padding: 1vw;
+    transition: 500ms ease;
+}
+
+.aberto {
+    border: 2px solid var(--verde-neon);
+}
+
+.aparente {
+    display: flex;
+}
+
+.virado {
+    transform: rotate(180deg);
 }
 
 #contato {
-    width: 30%;
+    width: 50%;
     margin: auto;
     line-height: 2vw;
-    background-color: var(--cinza-escuro);
+    background-color: var(--cinza-claro);
     padding: 1vw 2vw;
     border-radius: 1vw;
     text-align: justify;
     color: #fff;
-    margin: 2vw auto;
-    box-shadow: 0 0 10px 0 rgba(255, 255, 255, .25);
+    margin: 5vw auto;
+    box-shadow: 0 2px 8px 0 black;
 }
 
 #contato>div {
@@ -221,55 +296,59 @@ section {
 }
 
 form {
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    gap: 1.2vw;
+    display: flex;
+    flex-direction: column;
 }
 
 #contato>form>div {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 0 1vw;
+    justify-content: space-between; 
 }
 
 #contato>form>div>button {
-    width: 45%;
-    padding: .15vw 0vw;
+    width: 48%;
+    margin-top: 1vw;
+    padding: 1vw 2vw;
     border-radius: 5px;
     border: none;
+    font-family: var(--agrandir);
 }
 
 form>input {
-    padding: .2vw;
-    font-size: 1vw;
-    background-color: var(--cinza-clarinho);
+    width: 100%;
+    padding: 1vw;
+    background-color: var(--cinza-escuro);
     color: #fff;
     border: none;
     border-radius: 5px;
+    margin-bottom: 1vw;
 }
 
 textarea {
     resize: none;
-    padding: .2vw;
-    font-size: 1vw;
+    width: 100%;
     height: 6vw;
-    background-color: var(--cinza-clarinho);
+    padding: 1vw;
+    background-color: var(--cinza-escuro);
     color: #fff;
     border-radius: 5px;
+    font-family: var(--agrandir);
 }
 
 form>input::placeholder,
 textarea::placeholder {
-    color: #fff !important;
+    color: #a3a3a3 !important;
+    font-family: var(--agrandir);
 }
 
 #enviar {
     background-color: var(--laranja-neon);
     color: #fff;
+}
+
+#enviar:hover {
+    background-color: var(--verde-escuro);
 }
 
 footer {
@@ -331,6 +410,190 @@ footer>p {
     padding: 1vw;
 }
 
+footer a:hover {
+    color: var(--verde-escuro);
+}
+
 button{
     cursor: pointer;
+}
+
+#menu {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #menu {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 6vh;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--cinza-claro);
+        flex-direction: column;
+        gap: 5vw;
+        padding: 4vw;
+        text-align: left;
+        z-index: 999;
+        align-items: start;
+        display: none;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    header {
+        height: 6vh;
+        padding: 4vw;
+    }
+
+    #menu {
+        width: 5vw;
+    }
+
+    header img {
+        width: 10vw;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    .banner {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .banner h2 {
+        font-size: 1rem;
+    }
+
+    .h2 {
+        font-size: 2rem;
+    }
+    
+    section {
+        margin-top: 3vw;
+    }
+
+    #quemSomos p {
+        width: 80%;
+    }
+
+    #quemSomos>div>button {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: larger;
+    }
+
+    #giftCards > div{
+        padding: 3vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 3vw;
+        grid-column-gap: 2vw;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .cards {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #duvidas {
+        padding: 3vw;
+    }
+
+    .duvida {
+        width: 100%;
+        padding: 2vw;
+    }
+
+    #contato {
+        width: 90%;
+        padding: 4vw 5vw;
+        line-height: 6vw;
+    }
+
+    #contato > h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #contato > div {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    #contato > form > div {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    #contato > form > div > button {
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    form > input, textarea {
+        margin-bottom: 4vw;
+        font-size: 1rem;
+        padding: 3vw;
+        height: auto;
+    }
+
+    textarea {
+        height: 25vw;
+    }
+
+    footer > h2 {
+        font-size: 1.2rem;
+        padding: 5vw 0 2vw 5vw;
+    }
+
+    .Infos {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3vw 5vw;
+    }
+
+    .Infos > div {
+        width: 100%;
+        margin-bottom: 5vw;
+    }
+
+    .Infos > div > h4 {
+        font-size: 1.3rem;
+        margin-bottom: 2vw;
+    }
+
+    footer > div > div > a {
+        gap: 3vw;
+        font-size: 1rem;
+    }
+
+    footer > div > div > a > div {
+        width: 15%;
+    }
+
+    footer > div > div > a > div > img {
+        width: 8vw;
+        height: auto;
+    }
+
+    footer > p {
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 3vw;
+    }    
 }

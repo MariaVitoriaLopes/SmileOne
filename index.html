@@ -11,8 +11,9 @@
 
 <body>
     <header>
-        <img src="assets/img/SmileOne.png" alt="Logo Smile One" class="logo">
-        <nav>
+        <img src="assets/img/SMILE.svg" alt="Logo Smile One" class="logo">
+        <img src="assets/img/menu_hamburguer.svg" alt="ícone de menu" id="menu" onclick="abrirMenuLateral()">
+        <nav id="navMenu">
             <a href="#inicio">INÍCIO</a>
             <a href="#quemSomos">QUEM SOMOS</a>
             <a href="#giftCards">GIFT CARD'S</a>
@@ -23,7 +24,7 @@
     </header>
     <main>
         <section id="inicio" class="banner">
-            <h2>Com SMILE ONE os níveis de diversão são desbloqueados!</h2>
+            <h2>Com SMILE ONE os níveis de diversão são <span class="destaque">desbloqueados!</span></h2>
         </section>
 
         <section id="quemSomos">
@@ -75,23 +76,40 @@
 
         <section id="duvidas">
             <h2 class="h2">Dúvidas</h2>
-            <div>
-                <div>
-                    <h3>Como posso comprar um gift card?</h3>
-                    <p>Você pode comprar nossos gift cards diretamente em nosso site. Basta escolher o valor desejado e
-                        seguir as instruções de compra.</p>
+            <div class="duvida">
+                <div class="duvida_fechada">
+                    <h3>Como faço para comprar um gift card?</h3>
+                    <img class="btnAbrir" onclick="abrirDropdownDuvida(this)" src="assets/img/flecha.svg" alt="ícone de flecha indicando para abrir para ver mais informações">
                 </div>
-
-                <div>
-                    <h3>Como posso comprar um gift card?</h3>
-                    <p>Você pode comprar nossos gift cards diretamente em nosso site. Basta escolher o valor desejado e
-                        seguir as instruções de compra.</p>
+                <div class="texto_duvida_aberta">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa odit amet? Fuga maxime nihil molestias totam repellendus pariatur, doloremque a, ipsam accusantium fugiat recusandae delectus numquam aliquid exercitationem eligendi?
                 </div>
-
-                <div>
-                    <h3>Como posso comprar um gift card?</h3>
-                    <p>Você pode comprar nossos gift cards diretamente em nosso site. Basta escolher o valor desejado e
-                        seguir as instruções de compra.</p>
+            </div>
+            <div class="duvida">
+                <div class="duvida_fechada">
+                    <h3>Comprei e não recebi nada. E agora?</h3>
+                    <img class="btnAbrir" onclick="abrirDropdownDuvida(this)" src="assets/img/flecha.svg" alt="ícone de flecha indicando para abrir para ver mais informações">
+                </div>
+                <div class="texto_duvida_aberta">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa odit amet? Fuga maxime nihil molestias totam repellendus pariatur, doloremque a, ipsam accusantium fugiat recusandae delectus numquam aliquid exercitationem eligendi?
+                </div>
+            </div>
+            <div class="duvida">
+                <div class="duvida_fechada">
+                    <h3>Como faço para comprar um gift card?</h3>
+                    <img class="btnAbrir" onclick="abrirDropdownDuvida(this)" src="assets/img/flecha.svg" alt="ícone de flecha indicando para abrir para ver mais informações">
+                </div>
+                <div class="texto_duvida_aberta">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa odit amet? Fuga maxime nihil molestias totam repellendus pariatur, doloremque a, ipsam accusantium fugiat recusandae delectus numquam aliquid exercitationem eligendi?
+                </div>
+            </div>
+            <div class="duvida">
+                <div class="duvida_fechada">
+                    <h3>Como faço para comprar um gift card?</h3>
+                    <img class="btnAbrir" onclick="abrirDropdownDuvida(this)" src="assets/img/flecha.svg" alt="ícone de flecha indicando para abrir para ver mais informações">
+                </div>
+                <div class="texto_duvida_aberta">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsa odit amet? Fuga maxime nihil molestias totam repellendus pariatur, doloremque a, ipsam accusantium fugiat recusandae delectus numquam aliquid exercitationem eligendi?
                 </div>
             </div>
         </section>
@@ -99,9 +117,12 @@
         <section id="contato">
             <h2 class="h2">Contato</h2>
             <form action="">
-                <input type="text" placeholder="Seu Nome">
-                <input type="email" placeholder="Seu Email">
-                <textarea placeholder="Digite sua dúvida..."></textarea>
+                <label for="nome">Nome:</label>
+                <input type="text" placeholder="Meu nome é..." id="nome">
+                <label for="email">E-mail:</label>
+                <input type="email" placeholder="exemplo@gmail.com" id="email">
+                <label for="txtarea">Nos fale uma dúvida, sugestão ou problema:</label>
+                <textarea id="txtarea" placeholder="Digite sua dúvida..."></textarea>
                 <div>
                     <button type="reset">Cancelar</button>
                     <button id="enviar" type="submit">Enviar</button>
@@ -114,7 +135,7 @@
         <h2>Smile One</h2>
         <div class="Infos">
             <div class="patrocinio">
-                <h4>Patrocinio</h4>
+                <h4>Patrocínio</h4>
                 <a href="">
                     <div><img src="assets/img/playstation.png" alt="Logo Play Station"></div>
                     <p>Play Station</p>
@@ -158,6 +179,7 @@
         <hr>
         <p>&copy; 2023 Smile One. Todos os direitos reservados.</p>
     </footer>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
